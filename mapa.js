@@ -26,7 +26,7 @@ const mas_info = document.getElementById("mas_info")
         <h5>Comuna: ${feature.properties.Comuna}</h5><br/>
         <span><b>Mujeres</b>: ${feature.properties.Mujeres}</span><br/>
         <span><b>Hombres</b>: ${feature.properties.Hombres}</span><br/>
-        <span><b>Hombres</b>: ${feature.properties.Total}</span><br/>
+        <span><b>Total</b>: ${feature.properties.Total}</span><br/>
       </p>`
       layer.bindPopup(dato_a_mostrar);
       layer.on({
@@ -42,7 +42,7 @@ const mas_info = document.getElementById("mas_info")
           //let tipo_badge_2009 = (mortalidad_2008 < mortalidad_2009) ? 'badge-danger' : 'badge-primary'
   
           // Se genera el HTML para representar la acción de Click sobre un marcador
-          let html_mortalidad = `
+          let html_mortalidad = '
             <div class="alert alert-primary" role="alert">
               <p>
                 Comuna: ${Comuna} hab <br/>
@@ -51,7 +51,7 @@ const mas_info = document.getElementById("mas_info")
                 Total: ${Total} hab <br/>
               </p>
             </div>
-          `
+          '
           // Se "escribe" el HTML en la página
           mas_info.innerHTML = html_mortalidad
         }
