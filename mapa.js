@@ -36,24 +36,9 @@ const mas_info = document.getElementById("mas_info")
           let Mujeres = event.target.feature.properties.Mujeres
           let Hombres = event.target.feature.properties.Hombres
           let Total = event.target.feature.properties.Total
-  
-          // Se establece el tipo de "badge", de acuerdo a la condición de mortalidad entre un año y otro
-          //let tipo_badge_2008 = (mortalidad_2008 > mortalidad_2009) ? 'badge-danger' : 'badge-primary'
-          //let tipo_badge_2009 = (mortalidad_2008 < mortalidad_2009) ? 'badge-danger' : 'badge-primary'
-  
-          // Se genera el HTML para representar la acción de Click sobre un marcador
-          let html_mortalidad = 
-            <div class="alert alert-primary" role="alert">
-              <p>
-                Comuna: ${Comuna} hab <br/>
-                Mujeres: ${Mujeres} hab <br/>
-                Mujeres: ${Hombres} hab <br/>
-                Total: ${Total} hab <br/>
-              </p>
-            </div>
+     
           
-          // Se "escribe" el HTML en la página
-          mas_info.innerHTML = html_mortalidad
+          
         }
       })
     }
