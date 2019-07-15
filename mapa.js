@@ -30,8 +30,7 @@ function MostrarDato(feature, layer) {
 
 function estiloMarker(feature, latlng) {
     return L.marker(latlng, {
-        alt: feature.properties.simbologia
-    })
+      })
 };
 
 // Se agrega data al Mapa
