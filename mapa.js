@@ -1,6 +1,6 @@
 // Definir atributos iniciales para el Mapa
-const MAP_ZOOM = 7
-const MAP_CENTER = [-20.1, -70.01]
+const MAP_ZOOM = 9
+const MAP_CENTER = [-19.9949018,-69.3224149]
 
 // Crear instancia del Mapa
 var map = L.map('myMap').setView(MAP_CENTER, MAP_ZOOM)
