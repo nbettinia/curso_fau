@@ -14,35 +14,28 @@ function MostrarDato(feature, layer) {
   // does this feature have a property named popupContent?
   if (feature.properties) {
    let dato_a_mostrar = `<p>
-      <h5>Comuna: ${feature.properties.COMUNA}</h5><br/>
-      <span><b>Mujeres</b>: ${feature.properties.TOT_M}</span><br/>
-      <span><b>Hombres</b>: ${feature.properties.TOTAL_H}</span><br/>
-      <span><b>Total</b>: ${feature.properties.TOT_COM}</span><br/>
+      <h5>Comuna: ${feature.properties.Comuna}</h5><br/>
+      <span><b>Mujeres</b>: ${feature.properties.Mujeres}</span><br/>
+      <span><b>Hombres</b>: ${feature.properties.Hombres}</span><br/>
       </p>`
    layer.bindPopup(dato_a_mostrar);
   }
 }
 
+function estiloMarker(feature, latlng) {
+    return L.marker(latlng, {
+        alt: feature.properties.simbologia
+    })
+};
+
 // Se agrega data al Mapa
 d3.json('./mapa.json')
   .then((geojson) => {
-    L.geoJSON(geojson, {
+  
+ }).addTo(map);
+  
+  L.geoJSON(geojson, {
       onEachFeature: MostrarDato
+      pointToLayer: estiloMarker // Función de estilo
       }).addTo(map)
   })
-
-
-  //d3.json('./mapa.json')
-  //.then((geojson) => {
-    //L.geoJSON(geojson, {
-      //onEachFeature: MostrarDato,
-
-      //pointToLayer: function (geoJsonPoint, latlng) {
-        //return L.circleMarker(latlng).bindPopup(`Mortalidad 2008: ${geoJsonPoint.mortalidad_2008}`)
-      //},
-      //style: function (geoJsonPoint) {
-        //let color = (geoJsonPoint.mortalidad_2008 > 20) ? 'red' : 'green'
-        //((return { fillColor: color}
-      //}
-    //}).addTo(map)
-  //})
