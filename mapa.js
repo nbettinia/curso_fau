@@ -19,6 +19,12 @@ function MostrarDato(feature, layer) {
       <span><b>Hombres</b>: ${feature.properties.Hombres}</span><br/>
       </p>`
    layer.bindPopup(dato_a_mostrar);
+    layer.on({
+      click: (event)=>{
+        // Se obtienen los datos desde las propiedades del JSON
+        let Comuna = event.target.feature.properties.Comuna
+        let Mujeres = event.target.feature.properties.Mujeres
+        let Hombres = event.target.feature.properties.Hombres
   }
 }
 
