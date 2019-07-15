@@ -63,13 +63,24 @@ const mas_info = document.getElementById("mas_info")
   //}
 //}
 
-
+// Se indica simobología para capa
+function getColor(total) {
+return total > 100000000 ? '#800026' : 
+total > 50000000 ? '#BD0026' : 
+total > 20000000 ? '#E31A1C' : 
+total > 10000000 ? '#FC4E2A' : 
+total > 5000000 ? '#FD8D3C' : 
+total > 2000000 ? '#FEB24C' : 
+total > 1000000 ? '#FED976' : 
+'#FFEDA0'; 
+}
 
 // Se agrega data al Mapa
 d3.json('./mapa.json')
   .then((geojson) => {
     L.geoJSON(geojson, {
       onEachFeature: MostrarDato
+      fillColor: getColor
 
     }).addTo(map)
   })
