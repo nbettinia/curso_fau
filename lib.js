@@ -18,11 +18,11 @@ leerExcel(ARCHIVO, HOJA, callback) {
         let COMUNA = item[0].replace(/\*/g, '');
         let TOT_M = item[2].replace(/\*/g, '');
         let TOTAL_H = item[1].replace(/\*/g, '');
-        comunas.centros.map((r) => {
+        comunas.centros.map((COMU) => {
           if (COMUNA === r.properties.comunas, TOT_M === r.properties.mujeres, TOTAL_H === r.properties.hombres) {
             // Se asignan invertidos ya que así estén en el GEOJSON de referencia.
-            coordenada_x = r.properties.coord_x;
-            coordenada_y = r.properties.coord_y;
+            coordenada_x = COMU.properties.coord_x;
+            coordenada_y = COMU.properties.coord_y;
             //let coordenada_x = -70.01
             //let coordenada_y = -20.18
             //TODO: asignar coordenadas
