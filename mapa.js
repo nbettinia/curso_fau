@@ -43,18 +43,18 @@ const mas_info = document.getElementById("mas_info")
     // Se valida si el objeto tiene la propiedad "properties"
     if (feature.properties) {
       let dato_a_mostrar = `<p>
-        <h5>Comuna: ${feature.properties.com}</h5><br/>
-        <span><b>Mujeres</b>: ${feature.properties.Mujeres}</span><br/>
-        <span><b>Hombres</b>: ${feature.properties.Hombres}</span><br/>
+        <h5>Comuna: ${feature.properties.comunas}</h5><br/>
+        <span><b>Mujeres</b>: ${feature.properties.mujeres}</span><br/>
+        <span><b>Hombres</b>: ${feature.properties.hombres}</span><br/>
       
       </p>`
       layer.bindPopup(dato_a_mostrar);
       layer.on({
         click: (event)=>{
           // Se obtienen los datos desde las propiedades del JSON
-          let Comuna = event.target.feature.properties.com
-          let Mujeres = event.target.feature.properties.Mujeres
-          let Hombres = event.target.feature.properties.Hombres
+          let Comuna = event.target.feature.properties.comunas
+          let Mujeres = event.target.feature.properties.mujeres
+          let Hombres = event.target.feature.properties.hombres
          
   
           // Se establece el tipo de "badge", de acuerdo a la condición de mortalidad entre un año y otro
