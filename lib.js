@@ -14,8 +14,8 @@ leerExcel(ARCHIVO, HOJA, callback) {
       //console.log(data);
       let datos_extraidos = data.slice(1,7).map((item) => {
         let COMUNA = item[0].replace(/\*/g, '');
-        let Mujeres = item[2].replace(/\*/g, '');
-        let Hombres = item[1].replace(/\*/g, '');
+        let TOT_M = item[2].replace(/\*/g, '');
+        let TOTAL_H = item[1].replace(/\*/g, '');
         comunas.centros.map((r) => {
           if (COMUNA === r.properties.comunas, Mujeres === r.properties.TOT_M, Hombres === r.properties.TOTAL_H) {
             // Se asignan invertidos ya que así estén en el GEOJSON de referencia.
