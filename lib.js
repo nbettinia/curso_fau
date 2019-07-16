@@ -6,6 +6,8 @@ leerExcel(ARCHIVO, HOJA, callback) {
   const fs = require('fs');
   const centros = fs.readFileSync('./COMU.json');
   const comunas = JSON.parse(centros);
+  const mujeres = JSON.parse(centros);
+  const hombres = JSON.parse(centros)
   // readXlsxFile(ARCHIVO, { sheet: HOJA })
   //.then((data) => {
   //const COMU = 
@@ -17,7 +19,7 @@ leerExcel(ARCHIVO, HOJA, callback) {
         let TOT_M = item[2].replace(/\*/g, '');
         let TOTAL_H = item[1].replace(/\*/g, '');
         comunas.centros.map((r) => {
-          if (COMUNA === r.properties.comunas, Mujeres === r.properties.TOT_M, Hombres === r.properties.TOTAL_H) {
+          if (COMUNA === r.properties.comunas, Mujeres === r.properties.Mujeres, Hombres === r.properties.Hombres) {
             // Se asignan invertidos ya que así estén en el GEOJSON de referencia.
             coordenada_x = r.properties.coord_x;
             coordenada_y = r.properties.coord_y;
