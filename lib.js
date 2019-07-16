@@ -13,12 +13,12 @@ leerExcel(ARCHIVO, HOJA, callback) {
   //const COMU = 
   readXlsxFile(ARCHIVO, { sheet: HOJA })
     .then((data) => {
-      //console.log(data);
+      console.log(data);
       let datos_extraidos = data.slice(1,7).map((item) => {
         let COMUNA = item[0].replace(/\*/g, '');
         let TOT_M = item[2].replace(/\*/g, '');
         let TOTAL_H = item[1].replace(/\*/g, '');
-        comunas.centros.map((COMU) => {
+        comunas.centros.map((r) => {
           if (COMUNA === r.properties.comunas, TOT_M === r.properties.mujeres, TOTAL_H === r.properties.hombres) {
             // Se asignan invertidos ya que así estén en el GEOJSON de referencia.
             coordenada_x = COMU.properties.coord_x;
