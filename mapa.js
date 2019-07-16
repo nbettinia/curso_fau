@@ -14,7 +14,7 @@ function MostrarDato(feature, layer) {
   // does this feature have a property named popupContent?
   if (feature.properties) {
    let dato_a_mostrar = `<p>
-      <h5><b>Comuna: ${feature.properties."Comuna"}</h5><br/>
+      <h5><b>Comuna</b>: ${feature.properties."Comuna"}</h5><br/>
       <span><b>Mujeres</b>: ${feature.properties."Mujeres"}</span><br/>
       <span><b>Hombres</b>: ${feature.properties."Hombres"}</span><br/>
       </p>`
