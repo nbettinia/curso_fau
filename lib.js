@@ -53,7 +53,7 @@ leerExcel(ARCHIVO, HOJA, callback) {
 escribirJSON: function (data){
   const fs = require('fs');
 
-  fs.writeFile('mapa.json', JSON.stringify(data), 'utf8', function(){
+  fs.writeFile('COMU.json', JSON.stringify(data), 'utf8', function(){
     console.log('Archivo json creado correctamente.')
   })
 }
