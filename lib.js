@@ -32,8 +32,8 @@ leerExcel(ARCHIVO, HOJA, callback) {
           "type": "Feature",
           "properties": {
             "comuna": COMUNA,
-            "mujeres": item[2],
-            "hombres": item[1],
+            "mujeres": TOT_M,
+            "hombres": TOTAL_H,
           },
           "geometry": {
             "type": "Point",
